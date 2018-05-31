@@ -1,0 +1,145 @@
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.body{
+  min-height: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-center-foot{
+  text-align: center;
+}
+
+.center {
+  margin: auto;
+  width: 30%;
+  padding: 10px;
+}
+
+
+.bot-footer{
+  position:absolute;
+  right: 0;
+  left: 0;
+  height:90px;
+  bottom: 0px;
+  background: ghostwhite;
+}
+
+@media (max-height: 750px) {
+  .bot-footer{
+    display: none;
+  }
+  .bottom-footer{
+    display: none;
+  }
+}
+
+.bottom-footer{
+  font-size: 13px;
+  text-align: right;
+  position:absolute;
+  bottom: 30px;
+  padding-top: 40px;
+  width:92%;
+  border-right: 30px;
+}
+
+.bottom-footer a{
+  color: #2972bb;
+
+}
+
+.bottom-footer a:link {
+  text-decoration: none;
+}
+
+.bottom-footer a:visited {
+  text-decoration: none;
+}
+
+.bottom-footer a:hover {
+  border-bottom: 2px solid black;
+}
+
+.bottom-footer a:active {
+  border-bottom: 2px solid black;
+}
+
+.footer{
+  font-size: 13px;
+  text-align: center;
+}
+
+.footer a{
+  color: #2972bb;
+  font-size: 18px;
+
+}
+
+.footer a:link {
+  text-decoration: none;
+}
+
+.footer a:visited {
+  text-decoration: none;
+}
+
+.footer a:hover {
+  border-bottom: 2px solid black;
+}
+
+.footer a:active {
+  border-bottom: 2px solid black;
+}
+
+.success-btn{
+  background-color: #005FB2;
+  border: none;
+  color: white;
+  padding: 10px 65px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+
+.labeling{
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  margin-bottom: 13px;
+  margin-top: 13px;
+  font-weight: bold;
+}
+
+.forms-group{
+  padding: 5px;
+}
+
+.form-control{
+  font-size: 15px;
+}
+
+button:disabled,
+button[disabled] {
+  background-color: darkgrey;
+}
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948;
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442;
+}

@@ -1,0 +1,70 @@
+.logo{
+  text-decoration: none;
+}
+
+h1{
+  font-family: "Times New Roman", Times, serif;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1;
+  padding-top: 40px;
+}
+h4{
+  font-family: "Times New Roman", Times, serif;
+  color: black;
+  line-height: 1;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+hr{
+  background-color: #333;
+  border: 0 none;
+  color: #333;
+  height: 4px;
+
+}
+
+h3{
+  font-family: "Times New Roman", Times, serif;
+  font-size: 35px;
+  margin-bottom: 10px;
+  margin-top: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+h2{
+  font-family: "Times New Roman", Times, serif;
+  font-size: 30px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.leftsidebar a{
+  color: #2972bb;
+  font-weight: bold;
+}
+
+.leftsidebar a:link {
+  text-decoration: none;
+}
+
+.leftsidebar a:visited {
+  text-decoration: none;
+}
+
+.leftsidebar a:hover {
+  border-bottom: 2px solid black;
+}
+
+.leftsidebar a:active {
+  border-bottom: 2px solid black;
+}
+
+.view li{
+  padding-bottom: 2px;
+  padding-top: 2px;
+}

@@ -1,0 +1,71 @@
+.logo{
+  text-decoration: none;
+}
+
+h1{
+  font-family: "Times New Roman", Times, serif;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1;
+  padding-top: 40px;
+}
+h4{
+  font-family: "Times New Roman", Times, serif;
+  color: black;
+  line-height: 1;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+hr{
+  background-color: #333;
+  border: 0 none;
+  color: #333;
+  height: 4px;
+
+}
+
+.Register{
+  font-size: 20px;
+  margin-top: 0px;
+  margin-bottom: 1px;
+  display: inline;
+  margin-left: 10px;
+  font-weight:normal;
+}
+
+input[type=checkbox] {
+  transform: scale(1.5) !important;
+  float: left;
+}
+
+input[type='checkbox']:checked {
+  background: #abd;
+}
+
+.Checkboxen{
+  margin: 6px;
+}
+
+
+.form{
+  padding-bottom: 50px;
+}
+
+.success-btn{
+  background-color: #005FB2;
+  border: none;
+  color: white;
+  padding: 15px 65px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+button:disabled,
+button[disabled] {
+  background-color: darkgrey;
+}

@@ -1,0 +1,74 @@
+.logo{
+  text-decoration: none;
+}
+
+h1{
+  font-family: "Times New Roman", Times, serif;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1;
+  padding-top: 40px;
+}
+h4{
+  font-family: "Times New Roman", Times, serif;
+  color: black;
+  line-height: 1;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+h2{
+  font-family: "Times New Roman", Times, serif;
+  font-size: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+hr{
+  background-color: #333;
+  border: 0 none;
+  color: #333;
+  height: 4px;
+
+}
+
+.forms-group{
+  padding: 5px;
+}
+
+.form-control{
+  font-size: 15px;
+  width: 240px;
+}
+.form-control1{
+  font-size: 15px;
+}
+
+.success-btn{
+  background-color: #005FB2;
+  border: none;
+  color: white;
+  padding: 10px 65px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 15px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.line {
+  background-color: #09559c;
+  border: 0 none;
+  color: #333;
+  height: 4px;
+}
+
+button:disabled,
+button[disabled] {
+  background-color: darkgrey;
+}
+
