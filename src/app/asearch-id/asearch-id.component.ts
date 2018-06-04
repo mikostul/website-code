@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {DataService} from '../Data.service';
-import {User} from '../../models/User';
+import {DataService} from "../Data.service";
+import {User} from "../../models/User";
 import {FormGroup, FormControl, Validators} from "@angular/forms";
-import {Student} from "../../models/Student";
 import {Router} from "@angular/router";
 
 @Component({
@@ -17,7 +16,7 @@ export class AsearchIdComponent implements OnInit {
    studentForm: FormGroup;
    wasSubmitted: boolean;
 
-   student: Student = new Student();
+   user: User = new User();
 
 
   /**
@@ -30,9 +29,9 @@ export class AsearchIdComponent implements OnInit {
   ngOnInit() {
     this.getUsers();
     this.studentForm = new FormGroup({
-      firstName: new FormControl(null),
-      lastName: new FormControl(null),
-      depaulID: new FormControl(null, Validators.required)
+      firstName: new FormControl(''),
+      lastName: new FormControl(''),
+      depaulID: new FormControl('', Validators.required)
     });
   }
 
@@ -41,9 +40,9 @@ export class AsearchIdComponent implements OnInit {
    * @returns {Subscription}
    */
   getUsers() {
-    return this.service.getUsers().subscribe((user: User[]) => {
-      this.duMembers = user;
-      console.log(this.duMembers);
+    return this.service.getUsers().subscribe((users: User[]) => {
+      this.duMembers = users;
+      //console.log(this.duMembers);
     });
   }
 
@@ -60,12 +59,12 @@ export class AsearchIdComponent implements OnInit {
     for (let i = 0; i < this.duMembers.length; i++) {
       if (this.duMembers[i].firstName == form.get('firstName').value
         && this.duMembers[i].depaulID == form.get('depaulID').value) {
-        this.student = form.value;  /* First Name and DePaul ID. */
-        this.student.lastName = this.duMembers[i].lastName;
-        this.student.degree = this.duMembers[i].degree;
-        this.student.address = this.duMembers[i].address;
+        this.user = form.value;  /* First Name and DePaul ID. */
+        this.user.lastName = this.duMembers[i].lastName;
+        this.user.degree = this.duMembers[i].degree;
+        this.user.address = this.duMembers[i].address;
         // hard coded courses
-        this.student.coursesTaken = this.duMembers[i].coursesTaken;
+        this.user.coursesTaken = this.duMembers[i].coursesTaken;
         this.wasFound = true;
       }
     }
