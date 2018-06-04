@@ -33,6 +33,10 @@
   </div>
 </nav>
 <br>
+
+<h2>Search for a Student</h2>
+<hr>
+
 <!--Search Form-->
 <div class="container1">
   <form novalidate [formGroup]="studentForm" (ngSubmit)="verify(studentForm)">
@@ -51,8 +55,8 @@
     </div>
   </form>
 </div>
-<br/>
 <!--End Search Form-->
+<hr>
 
 <!--Card area-->
 <div *ngIf="wasFound">
@@ -61,10 +65,10 @@
       Student Information
     </div>
     <div class="card-block">
-      <h6 class="card-title" style="margin-top: 7px;font-weight: bold;">{{user.lastName + ', ' + user.firstName}}</h6>
-      <p class="card-text"><strong>Degree:</strong> {{user.degree}}</p>
-      <p><strong>Address:</strong></p><p style="margin-top: 0px;">{{user.address}}</p>
-      <p><strong>Courses taken:</strong></p><p style="margin-top: 0px;">{{user.coursesTaken}}</p>
+      <h6 class="card-title" style="margin-top: 7px;font-weight: bold;">{{student.lastName + ', ' + student.firstName}}</h6>
+      <p class="card-text"><strong>Degree:</strong> {{student.degree}}</p>
+      <p><strong>Address:</strong></p><p style="margin-top: 0px;">{{student.address}}</p>
+      <p><strong>Courses taken:</strong></p><p style="margin-top: 0px;">{{student.coursesTaken}}</p>
     </div>
   </div>
 </div>
@@ -74,4 +78,3 @@
 <div *ngIf="wasSubmitted && !wasFound" class="alert alert-danger" id="notFoundArea">
   Student not found.
 </div>
-

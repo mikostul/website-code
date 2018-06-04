@@ -51,39 +51,42 @@
 </nav>
 <br>
 
+
+<h2>Search for a Student</h2>
+<hr>
+
 <!--Search Form-->
 <div class="container1">
-  <form novalidate [formGroup]="studentForm" (ngSubmit)="verify(studentForm)">
-    <div class="form-group">
-      <input type="text" placeholder="First Name" formControlName="firstName" class="form-control-sm">
-    </div>
-    <div class="form-group">
-      <input type="text" placeholder="DePaul ID" formControlName="depaulID" class="form-control-sm">
-    </div>
-    <div *ngIf="studentForm.get('depaulID').touched && studentForm.get('depaulID').hasError('required')" class="alert alert-danger">
-      DePaul ID is required.
-    </div>
-    <div class="btn-toolbar">
-      <button type="submit" class="btn btn-success" id="searchBTN" name="button" [disabled]="studentForm.invalid"> Search</button>
-      <button (click)="reset()" type="reset" class="btn btn-warning" style="background-color: #FF1111;color: white; border: none;" id="resetBTN"> Reset</button>
-    </div>
-  </form>
+<form novalidate [formGroup]="studentForm" (ngSubmit)="verify(studentForm)">
+  <div class="form-group">
+    <input type="text" placeholder="First Name" formControlName="firstName" class="form-control-sm">
+  </div>
+  <div class="form-group">
+    <input type="text" placeholder="DePaul ID" formControlName="depaulID" class="form-control-sm">
+  </div>
+  <div *ngIf="studentForm.get('depaulID').touched && studentForm.get('depaulID').hasError('required')" class="alert alert-danger">
+    DePaul ID is required.
+  </div>
+  <div class="btn-toolbar">
+    <button type="submit" class="btn btn-success" id="searchBTN" name="button" [disabled]="studentForm.invalid"> Search</button>
+    <button (click)="reset()" type="reset" class="btn btn-warning" style="background-color: #FF1111;color: white; border: none;" id="resetBTN"> Reset</button>
+  </div>
+</form>
 </div>
-<br/>
 <!--End Search Form-->
-
+<hr>
 <!--Card area-->
 <div *ngIf="wasFound">
   <div class="card text-center" style="width: 20rem;">
     <div class="card-header">
       Student Information
     </div>
-    <div class="card-block">
-      <h6 class="card-title" style="margin-top: 7px;font-weight: bold;">{{user.lastName + ', ' + user.firstName}}</h6>
-      <p class="card-text"><strong>Degree:</strong> {{user.degree}}</p>
-      <p><strong>Address:</strong></p><p style="margin-top: 0px;">{{user.address}}</p>
-      <p><strong>Courses taken:</strong></p><p style="margin-top: 0px;">{{user.coursesTaken}}</p>
-    </div>
+      <div class="card-block">
+        <h6 class="card-title" style="margin-top: 7px;font-weight: bold;">{{student.lastName + ', ' + student.firstName}}</h6>
+        <p class="card-text"><strong>Degree:</strong> {{student.degree}}</p>
+      <p><strong>Address:</strong></p><p style="margin-top: 0px;">{{student.address}}</p>
+        <p><strong>Courses taken:</strong></p><p style="margin-top: 0px;">{{student.coursesTaken}}</p>
+      </div>
   </div>
 </div>
 <!--End card area-->

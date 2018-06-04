@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import {DataService} from "../data.service";
-import {User} from "../models/user";
+import {Component, OnInit} from '@angular/core';
+import {DataService} from '../Data.service';
+import {User} from '../../models/User';
 import {FormGroup, FormControl, Validators} from "@angular/forms";
+import {Student} from "../../models/Student";
 import {Router} from "@angular/router";
-
 
 @Component({
   selector: 'app-asearch-id',
@@ -11,11 +11,14 @@ import {Router} from "@angular/router";
   styleUrls: ['./asearch-id.component.css']
 })
 export class AsearchIdComponent implements OnInit {
-  duMembers: User[] = [];
-  wasFound: boolean;
-  studentForm: FormGroup;
-  wasSubmitted: boolean;
-  user: User = new User();
+
+   duMembers: User[] = [];
+   wasFound: boolean;
+   studentForm: FormGroup;
+   wasSubmitted: boolean;
+
+   student: Student = new Student();
+
 
   /**
    *
@@ -23,12 +26,13 @@ export class AsearchIdComponent implements OnInit {
    */
   constructor(private service: DataService, private router: Router) { }
 
+
   ngOnInit() {
     this.getUsers();
     this.studentForm = new FormGroup({
-      firstName: new FormControl(''),
-      lastName: new FormControl(''),
-      depaulID: new FormControl('', Validators.required)
+      firstName: new FormControl(null),
+      lastName: new FormControl(null),
+      depaulID: new FormControl(null, Validators.required)
     });
   }
 
@@ -37,36 +41,37 @@ export class AsearchIdComponent implements OnInit {
    * @returns {Subscription}
    */
   getUsers() {
-    return this.service.getUsers().subscribe((users: User[]) => {
-      this.duMembers = users;
-      // console.log(this.duMembers);
+    return this.service.getUsers().subscribe((user: User[]) => {
+      this.duMembers = user;
+      console.log(this.duMembers);
     });
   }
 
-  /**
-   * Verify the form.
+
+  /*
+   * If the form is valid it searches for the student name and ID.
    * @param {FormGroup} form
    */
   verify(form: FormGroup) {
-    if(!form){
+    if (!form) {
       form.reset();
     }
     this.wasSubmitted = true;
-    for(let i = 0; i < this.duMembers.length; i++) {
-      if(this.duMembers[i].firstName == form.get('firstName').value &&
-      this.duMembers[i].depaulID == form.get('depaulID').value) {
-        this.user = form.value; /* First name and DePaul ID already here.*/
-        this.user.lastName = this.duMembers[i].lastName;
-        this.user.degree = this.duMembers[i].degree;
-        this.user.address = this.duMembers[i].address;
-        // hard coded courses. Will fix later...
-        this.user.coursesTaken = ['CSC 200', 'CSC 300', 'CSC 301'];
+    for (let i = 0; i < this.duMembers.length; i++) {
+      if (this.duMembers[i].firstName == form.get('firstName').value
+        && this.duMembers[i].depaulID == form.get('depaulID').value) {
+        this.student = form.value;  /* First Name and DePaul ID. */
+        this.student.lastName = this.duMembers[i].lastName;
+        this.student.degree = this.duMembers[i].degree;
+        this.student.address = this.duMembers[i].address;
+        // hard coded courses
+        this.student.coursesTaken = this.duMembers[i].coursesTaken;
         this.wasFound = true;
       }
     }
   }
 
-  /**
+  /*
    * Reset the form.
    */
   reset() {

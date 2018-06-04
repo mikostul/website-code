@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { DataService} from "../data.service";
-import { User} from "../models/user";
+import {Component, OnInit} from '@angular/core';
+import {DataService} from '../Data.service';
+import {User} from '../../models/User';
 import {FormGroup, FormControl, Validators} from "@angular/forms";
+import {Student} from "../../models/Student";
 import {Router} from "@angular/router";
 
 @Component({
@@ -9,14 +10,22 @@ import {Router} from "@angular/router";
   templateUrl: './search-id.component.html',
   styleUrls: ['./search-id.component.css']
 })
-export class SearchIdComponent implements OnInit {
+export class SearchIDComponent implements OnInit {
 
-  duMembers: User[] = [];
-  user: User = new User();
-  wasFound: boolean;
-  studentForm: FormGroup;
-  wasSubmitted: boolean;
+   duMembers: User[] = [];
+   wasFound: boolean;
+   studentForm: FormGroup;
+   wasSubmitted: boolean;
+
+   student: Student = new Student();
+
+
+  /**
+   *
+   * @param {DataService} service
+   */
   constructor(private service: DataService, private router: Router) { }
+
 
   ngOnInit() {
     this.getUsers();
@@ -28,45 +37,48 @@ export class SearchIdComponent implements OnInit {
   }
 
   /**
-   * Ge all the users from the database.
+   * Get all the users from the database.
    * @returns {Subscription}
    */
   getUsers() {
-    return this.service.getUsers().subscribe((users: User[]) => {
-      this.duMembers = users;
-      // console.log(this.duMembers);
+    return this.service.getUsers().subscribe((user: User[]) => {
+      this.duMembers = user;
+      console.log(this.duMembers);
     });
   }
 
+
+  /*
+   * If the form is valid it searches for the student name and ID.
+   * @param {FormGroup} form
+   */
   verify(form: FormGroup) {
-    // if(!form) {
-    //   form.reset();
-    // }
-    if(form == null) return;
+    if (!form) {
+      form.reset();
+    }
     this.wasSubmitted = true;
-    for(let i = 0; i < this.duMembers.length; i++ ) {
-      if(this.duMembers[i].firstName == form.get('firstName').value &&
-      this.duMembers[i].depaulID == form.get('depaulID').value) {
-        this.user.firstName = form.get('firstName').value;
-        this.user.depaulID = form.get('depaulID').value;
-        this.user.lastName = this.duMembers[i].lastName;
-        this.user.degree = this.duMembers[i].degree;
-        this.user.address = this.duMembers[i].address;
-        // hard coded courses.
-        this.user.coursesTaken = ['CSC 200', 'CSC 300', 'CSC 301'];
+    for (let i = 0; i < this.duMembers.length; i++) {
+      if (this.duMembers[i].firstName == form.get('firstName').value
+        && this.duMembers[i].depaulID == form.get('depaulID').value) {
+        this.student = form.value;  /* First Name and DePaul ID. */
+        this.student.lastName = this.duMembers[i].lastName;
+        this.student.degree = this.duMembers[i].degree;
+        this.student.address = this.duMembers[i].address;
+        // hard coded courses
+        this.student.coursesTaken = this.duMembers[i].coursesTaken;
         this.wasFound = true;
       }
     }
   }
 
-  /**
+  /*
    * Reset the form.
    */
   reset() {
     this.studentForm.reset();
-    this.router.navigateByUrl('/SearchID');
+    this.router.navigateByUrl('/SearchID3');
     this.wasSubmitted = false;
     this.wasFound = false;
   }
-
 }
+

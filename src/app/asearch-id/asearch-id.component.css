@@ -138,3 +138,32 @@ button[disabled] {
 .btn-success:focus {
   box-shadow: none;
 }
+
+hr {
+  background-color: #09559c;
+  border: 0 none;
+  color: #333;
+  height: 4px;
+}
+
+h2{
+  font-family: "Times New Roman", Times, serif;
+  font-size: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.container1{
+  background: ghostwhite;
+  padding: 30px;
+  border-radius: 5px;
+  border: #09559c;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.card-header{
+  background-color: #09559c;
+  color: white;
+}
