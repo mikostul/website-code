@@ -39,7 +39,6 @@ import {AsearchIdComponent} from './asearch-id/asearch-id.component';
 import {ArequirementsComponent} from './arequirements/arequirements.component';
 import {AremoveUserComponent} from './aremove-user/aremove-user.component';
 import {AprogramsComponent} from './aprograms/aprograms.component';
-import {AenrollmentComponent} from './aenrollment/aenrollment.component';
 import {AeditProfileComponent} from './aedit-profile/aedit-profile.component';
 import {AdminComponent} from './admin/admin.component';
 import {AdegreeProgressComponent} from './adegree-progress/adegree-progress.component';
@@ -82,7 +81,6 @@ const appRoutes: Routes = [
   {path: 'requirements3', component: ArequirementsComponent},
   {path: 'remove', component: AremoveUserComponent},
   {path: 'programs', component: AprogramsComponent},
-  {path: 'enrollment', component: AenrollmentComponent},
   {path: 'edit-profile3', component: AeditProfileComponent},
   {path: 'home3', component: AdminComponent},
   {path: 'degree-progress3', component: AdegreeProgressComponent},
@@ -126,7 +124,6 @@ const appRoutes: Routes = [
     ArequirementsComponent,
     AremoveUserComponent,
     AprogramsComponent,
-    AenrollmentComponent,
     AeditProfileComponent,
     AdminComponent,
     AdegreeProgressComponent,
