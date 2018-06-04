@@ -158,16 +158,6 @@
     </div>
   </div>
 
-  <div class="form-group">
-    <input class="form-control" type="text" formControlName="userType" placeholder="User Type">
-  </div>
-  <!--UserType error-->
-  <div *ngIf="depaulForm2.get('userType').touched && depaulForm2.get('userType').hasError('required')" class="alert alert-danger">
-    User type is required.
-  </div>
-
-
-
   <!-- Password area -->
   <div class="form-group">
     <input class="form-control" type="password" formControlName="password" placeholder="Password">

@@ -28,7 +28,7 @@ export class AccountcreationComponent implements OnInit {
       email: new FormControl('',[Validators.required, Validators.email]),
       userID: new FormControl('',[Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z]+')]),
       password: new FormControl('',[Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')]),
-      userType: new FormControl('', Validators.required)
+      userType: new FormControl('Student')
     });
   }
 
