@@ -1,15 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {DataService} from "../data.service";
-import {User} from "../../models/user";
+import {User} from "../models/user";
 import {FormGroup, FormControl, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-asearch-id',
-  templateUrl: './asearch-id.component.html',
-  styleUrls: ['./asearch-id.component.css']
+  selector: 'app-search-id',
+  templateUrl: './search-id.component.html',
+  styleUrls: ['./search-id.component.css']
 })
-export class AsearchIdComponent implements OnInit {
+export class SearchIdComponent implements OnInit {
 
    duMembers: User[] = [];
    wasFound: boolean;

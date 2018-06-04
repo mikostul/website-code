@@ -27,5 +27,28 @@
   </div>
 </nav>
 <br>
-Requirements
+<div class="col-md-7">
+  <form novalidate [formGroup]="planForm" (ngSubmit)="submitForm(planForm)">
+    <p>Select a degree program to view the requirements</p>
+    <select class="form-control" id="degree_program" formControlName="degreeProgram">
+      <option></option>
+      <option *ngFor="let program of degreePrograms">{{program}}</option>
+    </select>
+    <br>
+  <button type="submit" class="btn btn-primary" id="submitBTN">Submit</button>
+  </form>
+</div>
+<br>
+<div class="col-md-10">
+  <table *ngIf="show" class="table table-striped">
+    <th>Requirement</th>
+    <th>Number of courses</th>
+    <th>Courses</th>
+    <tr *ngFor="let requirement of degreeRequirements">
+      <td>{{requirement.reqName}}</td>
+      <td>{{requirement.reqNum}}</td>
+      <td>{{requirement.courses}}</td>
+    </tr>
+  </table>
+</div>
 
