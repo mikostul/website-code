@@ -1,3 +1,5 @@
+import {Quarter} from "./degree-plan-form/quarter";
+
 export let userType = '';
 export let userName = '';
 export let password = '';
@@ -10,6 +12,11 @@ export let zip = '';
 export let state = '';
 export let DepaulID = '';
 export let email = '';
+
+export let path = [];
+export function setPath(newValue: Array<any>) {
+  path.push(newValue);
+}
 
 
 export function setValue(newValue: string) {

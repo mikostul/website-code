@@ -58,4 +58,11 @@
   </div>
 </nav>
 <br>
-<app-degree-plan-form></app-degree-plan-form>
+
+  <table class="table table-striped" style="width: 100%">
+    <tr *ngFor="let x of coursePath">
+      <td>{{x}}</td>
+    </tr>
+  </table>
+
+

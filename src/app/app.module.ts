@@ -9,6 +9,8 @@ import {DataGuard} from "./data.guard";
 import {Data2Guard} from "./data2.guard";
 import {Data3Guard} from "./data3.guard";
 
+import {TransfererService} from "./transferer.service";
+
 import {AppComponent} from './app.component';
 import {StudentComponent} from './student/student.component';
 import {TeamComponent} from './team/team.component';
@@ -141,7 +143,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     PDFExportModule
   ],
-  providers: [DataService, DataGuard, Data2Guard, Data3Guard],
+  providers: [DataService, DataGuard, Data2Guard, Data3Guard, TransfererService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

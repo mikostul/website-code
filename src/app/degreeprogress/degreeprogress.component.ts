@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {TransfererService} from "../transferer.service";
+import * as type from  './../globals';
+import {Quarter} from "../degree-plan-form/quarter";
 
 @Component({
   selector: 'app-degreeprogress',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DegreeprogressComponent implements OnInit {
 
-  constructor() { }
+  coursePath: Array<any> = [];
+
+  constructor(private transfererService: TransfererService) { }
 
   ngOnInit() {
+    this.transfererService.printPath();
+    console.log(type.path);
+    this.path();
   }
 
+  path(): Array<any> {
+    this.coursePath = type.path;
+    return this.coursePath;
+  }
 }
