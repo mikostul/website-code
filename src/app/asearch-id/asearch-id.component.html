@@ -80,12 +80,17 @@
     <div class="card-header">
       Student Information
     </div>
-      <div class="card-block">
-        <h6 class="card-title" style="margin-top: 7px;font-weight: bold;">{{student.lastName + ', ' + student.firstName}}</h6>
-        <p class="card-text"><strong>Degree:</strong> {{student.degree}}</p>
-      <p><strong>Address:</strong></p><p style="margin-top: 0px;">{{student.address}}</p>
-        <p><strong>Courses taken:</strong></p><p style="margin-top: 0px;">{{student.coursesTaken}}</p>
-      </div>
+      <!--<div class="card-block">-->
+        <!--<h6 class="card-title" style="margin-top: 7px;font-weight: bold;">{{student.lastName + ', ' + student.firstName}}</h6>-->
+        <!--<p class="card-text"><strong>Degree:</strong> {{student.degree}}</p>-->
+      <!--<p><strong>Address:</strong></p><p style="margin-top: 0px;">{{student.address}}</p>-->
+        <!--<p><strong>Courses taken:</strong></p><p style="margin-top: 0px;">{{student.coursesTaken}}</p>-->
+      <!--</div>-->
+    <div class="card-block">
+      <h6 class="card-title" style="margin-top: 7px;font-weight: bold;">{{user.lastName + ',' + user.firstName}}</h6>
+      <p class="card-text"><strong>Degree:</strong>{{user.degree}}</p>
+      <p><strong>Address:</strong></p><p style="margin-top: 0px;">{{user.address}}</p>
+    </div>
   </div>
 </div>
 <!--End card area-->
